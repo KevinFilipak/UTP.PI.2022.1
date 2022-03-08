@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>UTP.PI._2022._1.Model</RootNamespace>
+  </PropertyGroup>
+
+</Project>

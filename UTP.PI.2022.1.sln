@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTP.PI.2022.1.Forms", "UTP.PI.2022.1.Forms\UTP.PI.2022.1.Forms.csproj", "{529A4718-55BA-4F5B-A870-87E73F00F2B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTP.PI.2022.1.Model", "UTP.PI.2022.1.Model\UTP.PI.2022.1.Model.csproj", "{2B4A31D8-703C-483D-88F9-5753C715F469}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{529A4718-55BA-4F5B-A870-87E73F00F2B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{529A4718-55BA-4F5B-A870-87E73F00F2B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{529A4718-55BA-4F5B-A870-87E73F00F2B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4A31D8-703C-483D-88F9-5753C715F469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4A31D8-703C-483D-88F9-5753C715F469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4A31D8-703C-483D-88F9-5753C715F469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4A31D8-703C-483D-88F9-5753C715F469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
