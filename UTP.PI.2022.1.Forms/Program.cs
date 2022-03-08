@@ -1,11 +1,12 @@
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using UTP.PI._2022._1.Model.Config;
 
 namespace UTP.PI._2022._1.Forms
 {
@@ -18,32 +19,9 @@ namespace UTP.PI._2022._1.Forms
         static void Main()
         {
 
-            if (!File.Exists("DB.sqlite"))
-            {
 
-                SqliteConnection conn = new SqliteConnection("Data Source=DB.sqlite");
-
-                conn.Open();
-
-                SqliteCommand cmd = conn.CreateCommand();
-
-                cmd.CommandText = "CREATE TABLE Banco ([Id] INTEGER PRIMARY KEY, [Nome] VARCHAR(100));";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = "CREATE TABLE Agencia ([Id] INTEGER PRIMARY KEY, [Nome] VARCHAR(100), [Endereco] VARCHAR(100), [CodigoBanco] INTEGER);";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = "CREATE TABLE Cliente ([Id] INTEGER PRIMARY KEY, [Nome] VARCHAR(100), [CPF] VARCHAR(100), [Email] VARCHAR(100), [Telefone] VARCHAR(100));";
-                cmd.ExecuteNonQuery();
-
-                cmd.CommandText = "CREATE TABLE Conta ([Id] INTEGER PRIMARY KEY, [NumeroConta] VARCHAR(100), [CodigoAgencia] INTEGER, [CodigoCliente] INTEGER, [Limite] FLOAT, [Saldo] FLOAT);";
-                cmd.ExecuteNonQuery();
-
-                cmd.Dispose();
-
-                conn.Close();
-                conn.Dispose();
-            }
+            string nome = ConfigurationManager.AppSettings["DataBaseName"];
+            DataBase.CriarArquivo(nome);
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
