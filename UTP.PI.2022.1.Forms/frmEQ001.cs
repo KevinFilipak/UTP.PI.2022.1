@@ -65,10 +65,15 @@ namespace UTP.PI._2022._1.Forms
             {
                 if (e.KeyCode == Keys.Delete)
                 {
-                    MessageBox.Show("Tem certeza que deseja deletar esta equipe?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    var obj = (Equipe)grdEquipe.CurrentRow.DataBoundItem;
-                    obj.Excluir();
+                    DialogResult dialogResult =  MessageBox.Show("Tem certeza que deseja deletar esta equipe?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        var obj = (Equipe)grdEquipe.CurrentRow.DataBoundItem;
+                        obj.Excluir();
+                    }
 
                     CarregarGrid();
                 }
@@ -81,6 +86,11 @@ namespace UTP.PI._2022._1.Forms
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

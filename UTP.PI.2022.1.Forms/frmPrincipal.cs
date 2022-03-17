@@ -45,5 +45,15 @@ namespace UTP.PI._2022._1.Forms
         {
             this.Close();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -39,5 +39,11 @@ namespace UTP.PI._2022._1.Forms
             }
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
