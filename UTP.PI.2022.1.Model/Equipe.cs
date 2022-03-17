@@ -33,6 +33,9 @@ namespace UTP.PI._2022._1.Model
         [DisplayName("Senha")]
         public string SENHA { get; set; }
 
+        [DisplayName("Administrador")]
+        public bool ADMIN { get; set; }
+
 
 
 
@@ -57,14 +60,14 @@ namespace UTP.PI._2022._1.Model
                         {
                             lst.Add(new Equipe
                             {
-                                ID = 0000 + dr.GetInt32(0),
+                                ID = dr.GetInt32(0),
                                 EQUIPE = dr.GetString(1),
                                 COL1 = dr.GetString(2),
                                 COL2 = dr.GetString(3),
                                 COL3 = dr.GetString(4),
                                 COL4 = dr.GetString(5),
-                                SENHA = "******"
-
+                                SENHA = dr.GetString(6),
+                                ADMIN = dr.GetBoolean(7),
                             });
                         }
                     }
@@ -73,7 +76,29 @@ namespace UTP.PI._2022._1.Model
             return lst;
         }
 
-        public void Inserir()
+        public string Salvar()
+        {
+            try
+            {
+                if (this.ID == 0)
+                {
+                    this.Inserir();
+                    return "Equipe Cadastrada!";
+                }
+                else
+                {
+                    this.Atualizar();
+                    return "Equipe Atualizada!";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
+        }
+
+        private void Inserir()
         {
             using (var conn = DataBase.CriarConexao())
             {
@@ -83,14 +108,16 @@ namespace UTP.PI._2022._1.Model
 
 
                 SqliteCommand command = conn.CreateCommand();
-                command.CommandText = "INSERT INTO tb_Equipe (EQUIPE, COL1, COL2, COL3, COL4, SENHA) VALUES ('@EQUIPE','@COL1','@COL2','@COL3','@COL4', '@SENHA')";
+                command.CommandText = "INSERT INTO tb_Equipe (EQUIPE, COL1, COL2, COL3, COL4, SENHA, ADMIN, CREATED) VALUES (@EQUIPE,@COL1,@COL2,@COL3,@COL4,@SENHA,@ADMIN,DATETIME('now'))";
 
-                command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE));
+                command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE)) ;
                 command.Parameters.Add(new SqliteParameter("@COL1", COL1));
                 command.Parameters.Add(new SqliteParameter("@COL2", COL2));
                 command.Parameters.Add(new SqliteParameter("@COL3", COL3));
                 command.Parameters.Add(new SqliteParameter("@COL4", COL4));
                 command.Parameters.Add(new SqliteParameter("@SENHA", SENHA));
+                command.Parameters.Add(new SqliteParameter("@ADMIN", ADMIN));
+
                 command.ExecuteNonQuery();
 
                 using (var cmd = conn.CreateCommand())
@@ -101,7 +128,7 @@ namespace UTP.PI._2022._1.Model
             }
         }
 
-        public void Atualizar()
+        private void Atualizar()
         {
             using (var conn = DataBase.CriarConexao())
             {
@@ -109,15 +136,28 @@ namespace UTP.PI._2022._1.Model
 
                 var sql = new StringBuilder();
 
-                sql.AppendLine("UPDATE tb_Equipe ");
-                sql.AppendLine("(EQUIPE, COL1, COL2, COL3, COL4, SENHA) VALUES ");
-                sql.AppendLine($"('{this.EQUIPE}'");
-                sql.AppendLine($",'{this.COL1}'");
-                sql.AppendLine($",'{this.COL2}'");
-                sql.AppendLine($",'{this.COL3}'");
-                sql.AppendLine($",'{this.COL4}'");
-                sql.AppendLine($",'{this.SENHA}'");
 
+                SqliteCommand command = conn.CreateCommand();
+                command.CommandText = "UPDATE tb_Equipe SET EQUIPE = @EQUIPE, " +
+                                                             "COL1 = @COL1," +
+                                                             "COL2 = @COL2, " +
+                                                             "COL3 = @COL3, " +
+                                                             "COL4 = @COL4, " +
+                                                             "UPDATED = DATETIME('now'), " +
+                                                             "ADMIN = @ADMIN, " +
+                                                             "SENHA = @SENHA WHERE ID = @ID ";
+
+                command.Parameters.Add(new SqliteParameter("@ID", ID));
+                command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE));
+                command.Parameters.Add(new SqliteParameter("@COL1", COL1));
+                command.Parameters.Add(new SqliteParameter("@COL2", COL2));
+                command.Parameters.Add(new SqliteParameter("@COL3", COL3));
+                command.Parameters.Add(new SqliteParameter("@COL4", COL4));
+                command.Parameters.Add(new SqliteParameter("@SENHA", SENHA));
+                command.Parameters.Add(new SqliteParameter("@ADMIN", ADMIN));
+
+
+                command.ExecuteNonQuery();
 
                 using (var cmd = conn.CreateCommand())
                 {
@@ -135,9 +175,13 @@ namespace UTP.PI._2022._1.Model
 
                 var sql = new StringBuilder();
 
-                sql.AppendLine("UPDATE tb_Equipe ");
-                sql.AppendLine("SET ARCHIVED = GETDATE() WHERE ID = ");
-                sql.AppendLine($"('{this.ID}'");
+
+                SqliteCommand command = conn.CreateCommand();
+                command.CommandText = "UPDATE tb_Equipe SET ARCHIVED = DATETIME('now') WHERE ID = @ID ";
+
+                command.Parameters.Add(new SqliteParameter("@ID", ID));
+
+                command.ExecuteNonQuery();
 
                 using (var cmd = conn.CreateCommand())
                 {
@@ -147,6 +191,43 @@ namespace UTP.PI._2022._1.Model
             }
         }
 
+        public bool ValidarLogin()
+        {
+            using (var conn = DataBase.CriarConexao())
+            {
+                conn.Open();
+         
+                
+               
+
+                using (var command = conn.CreateCommand())
+                {
+                    command.CommandText = "SELECT * FROM tb_Equipe WHERE ARCHIVED IS NULL AND EQUIPE = @EQUIPE AND SENHA = @SENHA";
+
+                    command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE));
+                    command.Parameters.Add(new SqliteParameter("@SENHA", SENHA));
+
+
+                    using (var dr = command.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            this.ID = dr.GetInt32(0);
+                            this.EQUIPE = dr.GetString(1);
+                            this.COL1 = dr.GetString(2);
+                            this.COL2 = dr.GetString(3);
+                            this.COL3 = dr.GetString(4);
+                            this.COL4 = dr.GetString(5);
+                            this.SENHA = dr.GetString(6);
+                            this.ADMIN = dr.GetBoolean(7);
+
+                        }
+                    }
+                }
+            }
+
+            return this.ID > 0;            
+        }
 
     }
 }

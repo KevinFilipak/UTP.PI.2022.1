@@ -42,6 +42,7 @@ namespace UTP.PI._2022._1.Forms
             this.txtCOL3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.cbxAdmin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -52,7 +53,7 @@ namespace UTP.PI._2022._1.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(386, 55);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Cadastrar";
+            this.button1.Text = "Cadastrar Equipe";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -159,11 +160,22 @@ namespace UTP.PI._2022._1.Forms
             this.txtPassword.Size = new System.Drawing.Size(362, 23);
             this.txtPassword.TabIndex = 11;
             // 
+            // cbxAdmin
+            // 
+            this.cbxAdmin.AutoSize = true;
+            this.cbxAdmin.Location = new System.Drawing.Point(12, 309);
+            this.cbxAdmin.Name = "cbxAdmin";
+            this.cbxAdmin.Size = new System.Drawing.Size(102, 19);
+            this.cbxAdmin.TabIndex = 13;
+            this.cbxAdmin.Text = "Administrador";
+            this.cbxAdmin.UseVisualStyleBackColor = true;
+            // 
             // frmEQ002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 450);
+            this.Controls.Add(this.cbxAdmin);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
@@ -179,6 +191,7 @@ namespace UTP.PI._2022._1.Forms
             this.Controls.Add(this.button1);
             this.Name = "frmEQ002";
             this.Text = "EQ002 - Cadastro de Equipe - HAJA";
+            this.Load += new System.EventHandler(this.frmEQ002_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +212,6 @@ namespace UTP.PI._2022._1.Forms
         private System.Windows.Forms.TextBox txtCOL3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.CheckBox cbxAdmin;
     }
 }

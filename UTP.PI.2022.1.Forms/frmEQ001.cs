@@ -38,5 +38,49 @@ namespace UTP.PI._2022._1.Forms
 
 
         }
+
+        private void grdEquipe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                frmEQ002 _frm = new frmEQ002();
+
+                _frm.equipe = (Equipe)grdEquipe.CurrentRow.DataBoundItem;
+                _frm.ShowDialog();
+
+                CarregarGrid();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void grdEquipe_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            try
+            {
+                if (e.KeyCode == Keys.Delete)
+                {
+                    MessageBox.Show("Tem certeza que deseja deletar esta equipe?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    var obj = (Equipe)grdEquipe.CurrentRow.DataBoundItem;
+                    obj.Excluir();
+
+                    CarregarGrid();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }

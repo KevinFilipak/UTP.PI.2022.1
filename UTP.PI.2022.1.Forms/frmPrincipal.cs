@@ -28,5 +28,22 @@ namespace UTP.PI._2022._1.Forms
             frmEQ002 frmEQ002 = new frmEQ002();
             frmEQ002.Show();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            menuAdmin.Visible = Program.EquipeLogada.ADMIN;
+            menuUser.Visible = !Program.EquipeLogada.ADMIN;        
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

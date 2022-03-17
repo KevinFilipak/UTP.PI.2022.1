@@ -35,6 +35,7 @@ namespace UTP.PI._2022._1.Model.Config
                                       "[COL3] VARCHAR(50)," +
                                       "[COL4] VARCHAR(50)," +
                                       "[Senha] VARCHAR(10), " +
+                                      "[ADMIN] VARCHAR(10), " +
                                       "[CREATED] DATETIME, " +
                                       "[UPDATED] DATETIME, " +
                                       "[ARCHIVED] DATETIME);";
@@ -46,14 +47,35 @@ namespace UTP.PI._2022._1.Model.Config
                     connection.Dispose();
 
                 }
+                CriarAdmin();
             }
 
         }
         public static SqliteConnection CriarConexao()
         {
-            
            return  new SqliteConnection("Data Source=" + nome_db + ".db");
-            
+        }
+        public static void CriarAdmin()
+        {
+
+            using (var conn = DataBase.CriarConexao())
+            {
+                conn.Open();
+
+                var sql = new StringBuilder();
+
+
+                SqliteCommand command = conn.CreateCommand();
+                command.CommandText = "INSERT INTO tb_Equipe (EQUIPE, COL1, COL2, COL3, COL4, SENHA, ADMIN) VALUES ('Admin','Admin','','','','1234','1')";
+
+                command.ExecuteNonQuery();
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = sql.ToString();
+                    cmd.ExecuteNonQuery();
+                }
+            }
 
         }
     }

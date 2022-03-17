@@ -13,6 +13,7 @@ namespace UTP.PI._2022._1.Forms
 {
     public partial class frmEQ002 : Form
     {
+        public Equipe equipe { get; set; }
         public frmEQ002()
         {
             InitializeComponent();
@@ -20,29 +21,68 @@ namespace UTP.PI._2022._1.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtEquipe.Text == "" || txtCOL1.Text == "" | txtPassword.Text == "")
+            try
             {
-                MessageBox.Show("Todos os campos devem ser preenchidos!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                if (txtEquipe.Text == "" || txtCOL1.Text == "" | txtPassword.Text == "")
+                {
+                    MessageBox.Show("Todos os campos devem ser preenchidos!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (txtEquipe.Text.Contains(" "))
+                {
+                    MessageBox.Show("O nome da Equipe não pode contar espaço!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
 
-            var obj = new Equipe
-            {
-                EQUIPE = txtEquipe.Text,
-                COL1 = txtCOL1.Text,
-                COL2 = txtCOL2.Text,
-                COL3 = txtCOL3.Text,
-                COL4 = txtCOL4.Text,
-                SENHA = txtPassword.Text,
-            };
+                equipe.EQUIPE = txtEquipe.Text;
+                equipe.COL1 = txtCOL1.Text;
+                equipe.COL2 = txtCOL2.Text;
+                equipe.COL3 = txtCOL3.Text;
+                equipe.COL4 = txtCOL4.Text;
+                equipe.SENHA = txtPassword.Text;
+                equipe.ADMIN = cbxAdmin.Checked;
 
-            if (obj.ID == 0) { 
-                obj.Inserir();
-                MessageBox.Show("Equipe Cadastrada!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                var message = equipe.Salvar();
+
+                MessageBox.Show(message, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 this.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
 
+        private void frmEQ002_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (equipe != null)
+                {
+                    button1.Text = "Atualizar Equipe";
+                    txtEquipe.Text = equipe.EQUIPE;
+                    txtCOL1.Text = equipe.COL1;
+                    txtCOL2.Text = equipe.COL2;
+                    txtCOL3.Text = equipe.COL3;
+                    txtCOL4.Text = equipe.COL4;
+                    txtPassword.Text = equipe.SENHA;
+                    cbxAdmin.Checked = equipe.ADMIN;
+
+                }
+                else
+                {
+                    equipe = new Equipe();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
