@@ -10,44 +10,50 @@ namespace UTP.PI._2022._1.Model.Config
 {
     public static class DataBase
     {
+
+        private static string nome_db;
         /// <summary>
         /// Metodo de Criação de DataBase
         /// </summary>
         /// <param name="nome">Nome do Arquivo a ser utilizado. Passar com extensão .sqlite</param>
         public static void CriarArquivo(string nome)
         {
-
-
-            using (var connection = new SqliteConnection("Data Source=" + nome + ".db"))
+            nome_db = nome;
+            if (!File.Exists(nome + ".db"))
             {
-                connection.Open(); 
+                using (var connection = new SqliteConnection("Data Source=" + nome_db + ".db"))
+                {
+                    connection.Open();
 
-                SqliteCommand cmd = connection.CreateCommand();
+                    SqliteCommand cmd = connection.CreateCommand();
 
-                cmd.CommandText = "CREATE TABLE Banco ([Id] INTEGER PRIMARY KEY, [Nome] VARCHAR(100));";
-                cmd.ExecuteNonQuery();
+                    cmd.CommandText = "CREATE TABLE tb_Equipe " +
+                                      "([ID] INTEGER PRIMARY KEY, " +
+                                      "[EQUIPE] VARCHAR(50), " +
+                                      "[COL1] VARCHAR(50)," +
+                                      "[COL2] VARCHAR(50)," +
+                                      "[COL3] VARCHAR(50)," +
+                                      "[COL4] VARCHAR(50)," +
+                                      "[Senha] VARCHAR(10), " +
+                                      "[CREATED] DATETIME, " +
+                                      "[UPDATED] DATETIME, " +
+                                      "[ARCHIVED] DATETIME);";
+                    cmd.ExecuteNonQuery();
 
-                cmd.CommandText = "CREATE TABLE Agencia ([Id] INTEGER PRIMARY KEY, [Nome] VARCHAR(100), [Endereco] VARCHAR(100), [CodigoBanco] INTEGER);";
-                cmd.ExecuteNonQuery();
+                    cmd.Dispose();
 
-                cmd.CommandText = "CREATE TABLE Cliente ([Id] INTEGER PRIMARY KEY, [Nome] VARCHAR(100), [CPF] VARCHAR(100), [Email] VARCHAR(100), [Telefone] VARCHAR(100));";
-                cmd.ExecuteNonQuery();
+                    connection.Close();
+                    connection.Dispose();
 
-                cmd.CommandText = "CREATE TABLE Conta ([Id] INTEGER PRIMARY KEY, [NumeroConta] VARCHAR(100), [CodigoAgencia] INTEGER, [CodigoCliente] INTEGER, [Limite] FLOAT, [Saldo] FLOAT);";
-                cmd.ExecuteNonQuery();
-
-                cmd.Dispose();
-
-                connection.Close();
-                connection.Dispose();
-
+                }
             }
 
-
-          
-
-
-
+        }
+        public static SqliteConnection CriarConexao()
+        {
+            
+           return  new SqliteConnection("Data Source=" + nome_db + ".db");
+            
 
         }
     }

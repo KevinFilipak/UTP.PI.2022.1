@@ -19,7 +19,6 @@ namespace UTP.PI._2022._1.Forms
         static void Main()
         {
 
-
             string nome = ConfigurationManager.AppSettings["DataBaseName"];
             DataBase.CriarArquivo(nome);
 
