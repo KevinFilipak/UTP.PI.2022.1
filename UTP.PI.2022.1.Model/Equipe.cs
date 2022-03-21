@@ -131,14 +131,14 @@ namespace UTP.PI._2022._1.Model
         private void Atualizar()
         {
             using (var conn = DataBase.CriarConexao())
-            {
+            { 
                 conn.Open();
 
                 var sql = new StringBuilder();
 
 
                 SqliteCommand command = conn.CreateCommand();
-                command.CommandText = "UPDATE tb_Equipe SET EQUIPE = @EQUIPE, " +
+                command.CommandText = "UPDATE tb_Equipe SET EQUIPE = @EQUIPE, " +   
                                                              "COL1 = @COL1," +
                                                              "COL2 = @COL2, " +
                                                              "COL3 = @COL3, " +
