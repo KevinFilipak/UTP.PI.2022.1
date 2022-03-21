@@ -138,7 +138,7 @@ namespace UTP.PI._2022._1.Model
 
 
                 SqliteCommand command = conn.CreateCommand();
-                command.CommandText = "UPDATE tb_Equipe SET EQUIPE = @EQUIPE, " +
+                command.CommandText = "UPDATE tb_Equipe SET EQUIPE = @EQUIPE, " +   
                                                              "COL1 = @COL1," +
                                                              "COL2 = @COL2, " +
                                                              "COL3 = @COL3, " +
