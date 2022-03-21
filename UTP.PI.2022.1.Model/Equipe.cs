@@ -57,7 +57,7 @@ namespace UTP.PI._2022._1.Model
                     using (var dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
-                        {
+                        { 
                             lst.Add(new Equipe
                             {
                                 ID = dr.GetInt32(0),
