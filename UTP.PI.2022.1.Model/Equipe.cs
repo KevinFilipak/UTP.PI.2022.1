@@ -131,7 +131,7 @@ namespace UTP.PI._2022._1.Model
         private void Atualizar()
         {
             using (var conn = DataBase.CriarConexao())
-            {
+            { 
                 conn.Open();
 
                 var sql = new StringBuilder();
