@@ -12,6 +12,9 @@ namespace UTP.PI._2022._1.Forms
 {
     public partial class frmPrincipal : Form
     {
+        uscEquipe controlEquipe = null;
+        uscMola controlMola = null;
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -19,8 +22,9 @@ namespace UTP.PI._2022._1.Forms
 
         private void eQ001ConsultarEquipesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEQ001 frmEQ001 = new frmEQ001();
-            frmEQ001.Show();
+            //frmEQ001 frmEQ001 = new frmEQ001();
+            //frmEQ001.Show();
+            Equipe();
         }
 
         private void eQ002NovaEquipeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,6 +58,107 @@ namespace UTP.PI._2022._1.Forms
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CalculoMola();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            CalculoSuspensao();
+        }
+
+        private void DisposeAll()
+        {
+            try
+            {
+                btnFecharTela.Visible = false;
+
+                GC.Collect();
+                if (controlEquipe != null)
+                {
+                    controlEquipe.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+            }
+        }
+
+        private void Equipe()
+        {
+            try
+            {
+                DisposeAll();
+                btnFecharTela.Visible = true;
+                lblNomeTela.Text = "Cadastro de Equipes";
+                pnlControl.Controls.Clear();
+
+                controlEquipe = new uscEquipe
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                pnlControl.Controls.Add(controlEquipe);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+            }
+        }
+
+        private void CalculoMola()
+        {
+            try
+            {
+                DisposeAll();
+                btnFecharTela.Visible = true;
+                lblNomeTela.Text = "Cálculo da Constante Elástica da Mola";
+                pnlControl.Controls.Clear();
+
+                controlMola = new uscMola
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                pnlControl.Controls.Add(controlMola);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+            }
+        }
+
+        private void CalculoSuspensao()
+        {
+            try
+            {
+                DisposeAll();
+                btnFecharTela.Visible = true;
+                lblNomeTela.Text = "Cálculo da Constante Angular da Suspensão";
+                pnlControl.Controls.Clear();
+
+                controlMola = new uscMola
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                pnlControl.Controls.Add(controlMola);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnFecharTela_Click(object sender, EventArgs e)
+        {
+            DisposeAll();
+            lblNomeTela.Text = "";
+            pnlControl.Controls.Clear();
         }
     }
 }

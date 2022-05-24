@@ -49,6 +49,8 @@ namespace UTP.PI._2022._1.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@ namespace UTP.PI._2022._1.Forms
             this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(0, 427);
+            this.button1.Location = new System.Drawing.Point(0, 480);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(386, 55);
             this.button1.TabIndex = 0;
@@ -87,7 +89,7 @@ namespace UTP.PI._2022._1.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(9, 115);
+            this.label1.Location = new System.Drawing.Point(9, 169);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 21);
             this.label1.TabIndex = 4;
@@ -96,7 +98,7 @@ namespace UTP.PI._2022._1.Forms
             // txtCOL1
             // 
             this.txtCOL1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCOL1.Location = new System.Drawing.Point(13, 139);
+            this.txtCOL1.Location = new System.Drawing.Point(13, 193);
             this.txtCOL1.Name = "txtCOL1";
             this.txtCOL1.Size = new System.Drawing.Size(362, 29);
             this.txtCOL1.TabIndex = 3;
@@ -105,7 +107,7 @@ namespace UTP.PI._2022._1.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(7, 171);
+            this.label2.Location = new System.Drawing.Point(7, 225);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 6;
@@ -114,7 +116,7 @@ namespace UTP.PI._2022._1.Forms
             // txtCOL2
             // 
             this.txtCOL2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCOL2.Location = new System.Drawing.Point(12, 195);
+            this.txtCOL2.Location = new System.Drawing.Point(12, 249);
             this.txtCOL2.Name = "txtCOL2";
             this.txtCOL2.Size = new System.Drawing.Size(362, 29);
             this.txtCOL2.TabIndex = 5;
@@ -123,7 +125,7 @@ namespace UTP.PI._2022._1.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(9, 283);
+            this.label3.Location = new System.Drawing.Point(9, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 21);
             this.label3.TabIndex = 10;
@@ -132,7 +134,7 @@ namespace UTP.PI._2022._1.Forms
             // txtCOL4
             // 
             this.txtCOL4.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCOL4.Location = new System.Drawing.Point(12, 307);
+            this.txtCOL4.Location = new System.Drawing.Point(12, 361);
             this.txtCOL4.Name = "txtCOL4";
             this.txtCOL4.Size = new System.Drawing.Size(362, 29);
             this.txtCOL4.TabIndex = 9;
@@ -141,7 +143,7 @@ namespace UTP.PI._2022._1.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(9, 227);
+            this.label4.Location = new System.Drawing.Point(9, 281);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 21);
             this.label4.TabIndex = 8;
@@ -150,7 +152,7 @@ namespace UTP.PI._2022._1.Forms
             // txtCOL3
             // 
             this.txtCOL3.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCOL3.Location = new System.Drawing.Point(13, 251);
+            this.txtCOL3.Location = new System.Drawing.Point(13, 305);
             this.txtCOL3.Name = "txtCOL3";
             this.txtCOL3.Size = new System.Drawing.Size(362, 29);
             this.txtCOL3.TabIndex = 7;
@@ -159,7 +161,7 @@ namespace UTP.PI._2022._1.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(9, 339);
+            this.label5.Location = new System.Drawing.Point(9, 393);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 21);
             this.label5.TabIndex = 12;
@@ -168,7 +170,7 @@ namespace UTP.PI._2022._1.Forms
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(12, 363);
+            this.txtPassword.Location = new System.Drawing.Point(12, 417);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(362, 29);
@@ -178,7 +180,7 @@ namespace UTP.PI._2022._1.Forms
             // 
             this.cbxAdmin.AutoSize = true;
             this.cbxAdmin.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxAdmin.Location = new System.Drawing.Point(13, 398);
+            this.cbxAdmin.Location = new System.Drawing.Point(13, 453);
             this.cbxAdmin.Name = "cbxAdmin";
             this.cbxAdmin.Size = new System.Drawing.Size(126, 25);
             this.cbxAdmin.TabIndex = 13;
@@ -208,7 +210,7 @@ namespace UTP.PI._2022._1.Forms
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1954, -50);
+            this.btnClose.Location = new System.Drawing.Point(1910, -50);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 10;
@@ -224,7 +226,7 @@ namespace UTP.PI._2022._1.Forms
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1350, -19);
+            this.button2.Location = new System.Drawing.Point(1306, -19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(30, 30);
             this.button2.TabIndex = 14;
@@ -254,18 +256,39 @@ namespace UTP.PI._2022._1.Forms
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(345, 8);
+            this.button3.Location = new System.Drawing.Point(344, 7);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(30, 30);
             this.button3.TabIndex = 15;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(10, 114);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(129, 21);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Número do Carro";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumero.Location = new System.Drawing.Point(14, 138);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(362, 29);
+            this.txtNumero.TabIndex = 15;
+            // 
             // frmEQ002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 482);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(386, 535);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbxAdmin);
             this.Controls.Add(this.label5);
@@ -314,5 +337,7 @@ namespace UTP.PI._2022._1.Forms
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNumero;
     }
 }

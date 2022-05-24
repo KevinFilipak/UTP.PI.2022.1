@@ -18,6 +18,9 @@ namespace UTP.PI._2022._1.Model
         [DisplayName("Equipe")]
         public string EQUIPE { get; set; }
 
+        [DisplayName("Número do Carro")]
+        public string NUMERO { get; set; }
+
         [DisplayName("Colaborador 1")]
         public string COL1 { get; set; }
 
@@ -62,12 +65,13 @@ namespace UTP.PI._2022._1.Model
                             {
                                 ID = dr.GetInt32(0),
                                 EQUIPE = dr.GetString(1),
-                                COL1 = dr.GetString(2),
-                                COL2 = dr.GetString(3),
-                                COL3 = dr.GetString(4),
-                                COL4 = dr.GetString(5),
-                                SENHA = dr.GetString(6),
-                                ADMIN = dr.GetBoolean(7),
+                                NUMERO = dr.GetString(2),
+                                COL1 = dr.GetString(3),
+                                COL2 = dr.GetString(4),
+                                COL3 = dr.GetString(5),
+                                COL4 = dr.GetString(6),
+                                SENHA = dr.GetString(7),
+                                ADMIN = dr.GetBoolean(8),
                             });
                         }
                     }
@@ -108,9 +112,10 @@ namespace UTP.PI._2022._1.Model
 
 
                 SqliteCommand command = conn.CreateCommand();
-                command.CommandText = "INSERT INTO tb_Equipe (EQUIPE, COL1, COL2, COL3, COL4, SENHA, ADMIN, CREATED) VALUES (@EQUIPE,@COL1,@COL2,@COL3,@COL4,@SENHA,@ADMIN,DATETIME('now'))";
+                command.CommandText = "INSERT INTO tb_Equipe (EQUIPE, NUMERO,COL1, COL2, COL3, COL4, SENHA, ADMIN, CREATED) VALUES (@EQUIPE,@NUMERO,@COL1,@COL2,@COL3,@COL4,@SENHA,@ADMIN,DATETIME('now'))";
 
                 command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE)) ;
+                command.Parameters.Add(new SqliteParameter("@NUMERO", NUMERO));
                 command.Parameters.Add(new SqliteParameter("@COL1", COL1));
                 command.Parameters.Add(new SqliteParameter("@COL2", COL2));
                 command.Parameters.Add(new SqliteParameter("@COL3", COL3));
@@ -138,7 +143,8 @@ namespace UTP.PI._2022._1.Model
 
 
                 SqliteCommand command = conn.CreateCommand();
-                command.CommandText = "UPDATE tb_Equipe SET EQUIPE = @EQUIPE, " +   
+                command.CommandText = "UPDATE tb_Equipe SET EQUIPE = @EQUIPE, " +
+                                                             "NUMERO = @NUMERO," +
                                                              "COL1 = @COL1," +
                                                              "COL2 = @COL2, " +
                                                              "COL3 = @COL3, " +
@@ -149,6 +155,7 @@ namespace UTP.PI._2022._1.Model
 
                 command.Parameters.Add(new SqliteParameter("@ID", ID));
                 command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE));
+                command.Parameters.Add(new SqliteParameter("@NUMERO", NUMERO));
                 command.Parameters.Add(new SqliteParameter("@COL1", COL1));
                 command.Parameters.Add(new SqliteParameter("@COL2", COL2));
                 command.Parameters.Add(new SqliteParameter("@COL3", COL3));
@@ -214,12 +221,13 @@ namespace UTP.PI._2022._1.Model
                         {
                             this.ID = dr.GetInt32(0);
                             this.EQUIPE = dr.GetString(1);
-                            this.COL1 = dr.GetString(2);
-                            this.COL2 = dr.GetString(3);
-                            this.COL3 = dr.GetString(4);
-                            this.COL4 = dr.GetString(5);
-                            this.SENHA = dr.GetString(6);
-                            this.ADMIN = dr.GetBoolean(7);
+                            this.NUMERO = dr.GetString(2);
+                            this.COL1 = dr.GetString(3);
+                            this.COL2 = dr.GetString(4);
+                            this.COL3 = dr.GetString(5);
+                            this.COL4 = dr.GetString(6);
+                            this.SENHA = dr.GetString(7);
+                            this.ADMIN = dr.GetBoolean(8);
 
                         }
                     }

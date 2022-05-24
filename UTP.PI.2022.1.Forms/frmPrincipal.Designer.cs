@@ -44,6 +44,9 @@ namespace UTP.PI._2022._1.Forms
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlControl = new System.Windows.Forms.Panel();
+            this.btnFecharTela = new System.Windows.Forms.Button();
+            this.lblNomeTela = new System.Windows.Forms.Label();
             this.menuAdmin.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -180,14 +183,16 @@ namespace UTP.PI._2022._1.Forms
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(260, 26);
-            this.toolStripMenuItem2.Text = "EQ001 - Consultar Equipes";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(435, 26);
+            this.toolStripMenuItem2.Text = "CC001 - Cálculo da constante elástica da mola";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(260, 26);
-            this.toolStripMenuItem3.Text = "EQ002 - Nova Equipe";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(435, 26);
+            this.toolStripMenuItem3.Text = "CC002 - Cálculo da constante angular da suspensão";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -197,12 +202,53 @@ namespace UTP.PI._2022._1.Forms
             this.toolStripMenuItem4.Text = "Sair";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
+            // pnlControl
+            // 
+            this.pnlControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlControl.Location = new System.Drawing.Point(6, 167);
+            this.pnlControl.Name = "pnlControl";
+            this.pnlControl.Size = new System.Drawing.Size(794, 341);
+            this.pnlControl.TabIndex = 4;
+            // 
+            // btnFecharTela
+            // 
+            this.btnFecharTela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFecharTela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnFecharTela.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(89)))));
+            this.btnFecharTela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFecharTela.ForeColor = System.Drawing.Color.White;
+            this.btnFecharTela.Image = global::UTP.PI._2022._1.Forms.Properties.Resources.x_2x;
+            this.btnFecharTela.Location = new System.Drawing.Point(762, 126);
+            this.btnFecharTela.Name = "btnFecharTela";
+            this.btnFecharTela.Size = new System.Drawing.Size(35, 35);
+            this.btnFecharTela.TabIndex = 13;
+            this.btnFecharTela.UseVisualStyleBackColor = false;
+            this.btnFecharTela.Visible = false;
+            this.btnFecharTela.Click += new System.EventHandler(this.btnFecharTela_Click);
+            // 
+            // lblNomeTela
+            // 
+            this.lblNomeTela.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNomeTela.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNomeTela.ForeColor = System.Drawing.Color.Black;
+            this.lblNomeTela.Location = new System.Drawing.Point(3, 126);
+            this.lblNomeTela.Name = "lblNomeTela";
+            this.lblNomeTela.Size = new System.Drawing.Size(753, 34);
+            this.lblNomeTela.TabIndex = 14;
+            this.lblNomeTela.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 511);
+            this.Controls.Add(this.lblNomeTela);
+            this.Controls.Add(this.btnFecharTela);
+            this.Controls.Add(this.pnlControl);
             this.Controls.Add(this.menuUser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuAdmin);
@@ -239,5 +285,8 @@ namespace UTP.PI._2022._1.Forms
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.Panel pnlControl;
+        private System.Windows.Forms.Button btnFecharTela;
+        private System.Windows.Forms.Label lblNomeTela;
     }
 }

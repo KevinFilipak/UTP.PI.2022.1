@@ -30,6 +30,7 @@ namespace UTP.PI._2022._1.Model.Config
                     cmd.CommandText = "CREATE TABLE tb_Equipe " +
                                       "([ID] INTEGER PRIMARY KEY, " +
                                       "[EQUIPE] VARCHAR(50), " +
+                                      "[NUMERO] VARCHAR(50), " +
                                       "[COL1] VARCHAR(50)," +
                                       "[COL2] VARCHAR(50)," +
                                       "[COL3] VARCHAR(50)," +
@@ -66,7 +67,7 @@ namespace UTP.PI._2022._1.Model.Config
 
 
                 SqliteCommand command = conn.CreateCommand();
-                command.CommandText = "INSERT INTO tb_Equipe (EQUIPE, COL1, COL2, COL3, COL4, SENHA, ADMIN) VALUES ('Admin','Admin','','','','1234','1')";
+                command.CommandText = "INSERT INTO tb_Equipe (EQUIPE, NUMERO, COL1, COL2, COL3, COL4, SENHA, ADMIN) VALUES ('Admin', '0','Admin','','','','1234','1')";
 
                 command.ExecuteNonQuery();
 

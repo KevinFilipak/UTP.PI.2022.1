@@ -33,6 +33,7 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +91,17 @@
             this.panel1.Size = new System.Drawing.Size(400, 500);
             this.panel1.TabIndex = 8;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(328, 482);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "ADS - 2022";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -109,9 +120,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(3, 482);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 15);
+            this.label2.Size = new System.Drawing.Size(299, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Desenvolvido por: Kevin Filipak";
+            this.label2.Text = "Desenvolvido por: Kevin Filipak e Erick Krzyzanovski";
             // 
             // label3
             // 
@@ -168,17 +179,6 @@
             this.label4.Size = new System.Drawing.Size(94, 40);
             this.label4.TabIndex = 10;
             this.label4.Text = "Senha";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(328, 482);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 15);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "ADS - 2022";
             // 
             // frmLogin
             // 

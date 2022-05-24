@@ -17,10 +17,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="frmCC001.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="uscSuspensao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uscMola.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 

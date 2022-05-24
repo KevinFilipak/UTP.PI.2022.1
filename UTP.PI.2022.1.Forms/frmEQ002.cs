@@ -23,7 +23,7 @@ namespace UTP.PI._2022._1.Forms
         {
             try
             {
-                if (txtEquipe.Text == "" || txtCOL1.Text == "" | txtPassword.Text == "")
+                if (txtEquipe.Text == "" || txtCOL1.Text == "" | txtPassword.Text == "" || txtNumero.Text == "")
                 {
                     MessageBox.Show("Todos os campos devem ser preenchidos!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -34,8 +34,8 @@ namespace UTP.PI._2022._1.Forms
                     return;
                 }
 
-
                 equipe.EQUIPE = txtEquipe.Text;
+                equipe.NUMERO = txtNumero.Text;
                 equipe.COL1 = txtCOL1.Text;
                 equipe.COL2 = txtCOL2.Text;
                 equipe.COL3 = txtCOL3.Text;
@@ -65,6 +65,7 @@ namespace UTP.PI._2022._1.Forms
                 {
                     button1.Text = "Atualizar Equipe";
                     txtEquipe.Text = equipe.EQUIPE;
+                    txtNumero.Text = equipe.NUMERO;
                     txtCOL1.Text = equipe.COL1;
                     txtCOL2.Text = equipe.COL2;
                     txtCOL3.Text = equipe.COL3;
