@@ -49,6 +49,7 @@ namespace UTP.PI._2022._1.Model.Config
 
                 }
                 CriarAdmin();
+                CriarTabelaCalculo();
             }
 
         }
@@ -79,5 +80,36 @@ namespace UTP.PI._2022._1.Model.Config
             }
 
         }
+        public static void CriarTabelaCalculo()
+        {
+
+            using (var conn = DataBase.CriarConexao())
+            {
+                conn.Open();
+
+                var sql = new StringBuilder();
+
+
+                SqliteCommand command = conn.CreateCommand();
+                command.CommandText = "CREATE TABLE tb_CalcMola("
+                                            + "    ID INTEGER      PRIMARY KEY,"
+                                            + "    EQUIPE VARCHAR (50),        "
+                                            + "    RODA INT,                   "
+                                            + "    PESO_RODA       FLOAT,      "
+                                            + "    DISTANCIA_EIXO FLOAT,       "
+                                            + "    DISTANCIA_APOIO FLOAT,      "
+                                            + "    CONSTANTE FLOAT,             "
+                                            + "    DATA DATETIME);";
+                command.ExecuteNonQuery();
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = sql.ToString();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
+
     }
 }

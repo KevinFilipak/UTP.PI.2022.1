@@ -31,7 +31,7 @@ namespace UTP.PI._2022._1.Forms
             grdEquipe.DataSource = null;
 
 
-            grdEquipe.DataSource = Equipe.BuscarTodas();
+            grdEquipe.DataSource = CalculoMola.BuscarTodasEquipe(Program.EquipeLogada.EQUIPE);
 
             grdEquipe.Show();
 
@@ -40,36 +40,13 @@ namespace UTP.PI._2022._1.Forms
 
         private void grdEquipe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                EditarEquipe();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+          
         }
 
         private void grdEquipe_KeyDown(object sender, KeyEventArgs e)
         {
 
-            try
-            {
-                if (e.KeyCode == Keys.Delete)
-                {
-                    DeletarEquipe();
-
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        
 
         }
 

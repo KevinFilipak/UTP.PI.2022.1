@@ -44,11 +44,13 @@ namespace UTP.PI._2022._1.Forms
             this.btnRoda3 = new System.Windows.Forms.Button();
             this.lblRoda = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
-            this.txtEquipe = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.lblDistanciaEixo = new System.Windows.Forms.Label();
+            this.txtDistanciaEixo = new System.Windows.Forms.TextBox();
+            this.lblDistanciaApoio = new System.Windows.Forms.Label();
+            this.txtDistanciaApoio = new System.Windows.Forms.TextBox();
+            this.lblTextoResultado = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -146,6 +148,7 @@ namespace UTP.PI._2022._1.Forms
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCalcular
             // 
@@ -164,6 +167,7 @@ namespace UTP.PI._2022._1.Forms
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // pictureBox1
             // 
@@ -260,9 +264,9 @@ namespace UTP.PI._2022._1.Forms
             this.lblRoda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblRoda.Location = new System.Drawing.Point(466, 57);
             this.lblRoda.Name = "lblRoda";
-            this.lblRoda.Size = new System.Drawing.Size(177, 30);
+            this.lblRoda.Size = new System.Drawing.Size(217, 30);
             this.lblRoda.TabIndex = 25;
-            this.lblRoda.Text = "Calculo da Roda ";
+            this.lblRoda.Text = "Selecione uma Roda:";
             // 
             // lblPeso
             // 
@@ -273,50 +277,84 @@ namespace UTP.PI._2022._1.Forms
             this.lblPeso.Size = new System.Drawing.Size(213, 21);
             this.lblPeso.TabIndex = 24;
             this.lblPeso.Text = "Peso na Roda em KG (Ex: 10,5)";
+            this.lblPeso.Visible = false;
             // 
-            // txtEquipe
+            // txtPeso
             // 
-            this.txtEquipe.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEquipe.Location = new System.Drawing.Point(472, 114);
-            this.txtEquipe.Name = "txtEquipe";
-            this.txtEquipe.Size = new System.Drawing.Size(213, 29);
-            this.txtEquipe.TabIndex = 23;
+            this.txtPeso.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPeso.Location = new System.Drawing.Point(472, 114);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(213, 29);
+            this.txtPeso.TabIndex = 23;
+            this.txtPeso.Visible = false;
             // 
-            // label1
+            // lblDistanciaEixo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(468, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(370, 21);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Distância Entre o Centro Articulado e a Ponta do Eixo";
+            this.lblDistanciaEixo.AutoSize = true;
+            this.lblDistanciaEixo.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDistanciaEixo.Location = new System.Drawing.Point(468, 146);
+            this.lblDistanciaEixo.Name = "lblDistanciaEixo";
+            this.lblDistanciaEixo.Size = new System.Drawing.Size(370, 21);
+            this.lblDistanciaEixo.TabIndex = 27;
+            this.lblDistanciaEixo.Text = "Distância Entre o Centro Articulado e a Ponta do Eixo";
+            this.lblDistanciaEixo.Visible = false;
             // 
-            // textBox1
+            // txtDistanciaEixo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(472, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 29);
-            this.textBox1.TabIndex = 26;
+            this.txtDistanciaEixo.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDistanciaEixo.Location = new System.Drawing.Point(472, 170);
+            this.txtDistanciaEixo.Name = "txtDistanciaEixo";
+            this.txtDistanciaEixo.Size = new System.Drawing.Size(213, 29);
+            this.txtDistanciaEixo.TabIndex = 26;
+            this.txtDistanciaEixo.Visible = false;
             // 
-            // label2
+            // lblDistanciaApoio
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(468, 202);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(384, 21);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Distância Entre o Centro Articulado e o Ponto de Apoio";
+            this.lblDistanciaApoio.AutoSize = true;
+            this.lblDistanciaApoio.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDistanciaApoio.Location = new System.Drawing.Point(468, 202);
+            this.lblDistanciaApoio.Name = "lblDistanciaApoio";
+            this.lblDistanciaApoio.Size = new System.Drawing.Size(384, 21);
+            this.lblDistanciaApoio.TabIndex = 29;
+            this.lblDistanciaApoio.Text = "Distância Entre o Centro Articulado e o Ponto de Apoio";
+            this.lblDistanciaApoio.Visible = false;
             // 
-            // textBox2
+            // txtDistanciaApoio
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(472, 226);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 29);
-            this.textBox2.TabIndex = 28;
+            this.txtDistanciaApoio.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDistanciaApoio.Location = new System.Drawing.Point(472, 226);
+            this.txtDistanciaApoio.Name = "txtDistanciaApoio";
+            this.txtDistanciaApoio.Size = new System.Drawing.Size(213, 29);
+            this.txtDistanciaApoio.TabIndex = 28;
+            this.txtDistanciaApoio.Visible = false;
+            // 
+            // lblTextoResultado
+            // 
+            this.lblTextoResultado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTextoResultado.AutoSize = true;
+            this.lblTextoResultado.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTextoResultado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTextoResultado.Location = new System.Drawing.Point(466, 305);
+            this.lblTextoResultado.Name = "lblTextoResultado";
+            this.lblTextoResultado.Size = new System.Drawing.Size(138, 30);
+            this.lblTextoResultado.TabIndex = 30;
+            this.lblTextoResultado.Text = "RESULTADO:";
+            this.lblTextoResultado.Visible = false;
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblResultado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblResultado.Location = new System.Drawing.Point(468, 335);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(93, 30);
+            this.lblResultado.TabIndex = 31;
+            this.lblResultado.Text = "XX N/M";
+            this.lblResultado.Visible = false;
             // 
             // frmCC001
             // 
@@ -324,13 +362,15 @@ namespace UTP.PI._2022._1.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 632);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblResultado);
+            this.Controls.Add(this.lblTextoResultado);
+            this.Controls.Add(this.lblDistanciaApoio);
+            this.Controls.Add(this.txtDistanciaApoio);
+            this.Controls.Add(this.lblDistanciaEixo);
+            this.Controls.Add(this.txtDistanciaEixo);
             this.Controls.Add(this.lblRoda);
             this.Controls.Add(this.lblPeso);
-            this.Controls.Add(this.txtEquipe);
+            this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.btnRoda4);
             this.Controls.Add(this.btnRoda3);
             this.Controls.Add(this.btnRoda2);
@@ -367,10 +407,12 @@ namespace UTP.PI._2022._1.Forms
         private System.Windows.Forms.Button btnRoda3;
         private System.Windows.Forms.Label lblRoda;
         private System.Windows.Forms.Label lblPeso;
-        private System.Windows.Forms.TextBox txtEquipe;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.Label lblDistanciaEixo;
+        private System.Windows.Forms.TextBox txtDistanciaEixo;
+        private System.Windows.Forms.Label lblDistanciaApoio;
+        private System.Windows.Forms.TextBox txtDistanciaApoio;
+        private System.Windows.Forms.Label lblTextoResultado;
+        private System.Windows.Forms.Label lblResultado;
     }
 }
