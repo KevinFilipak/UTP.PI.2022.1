@@ -34,5 +34,27 @@ namespace UTP.PI._2022._1.Forms
         {
             this.Close();
         }
+
+        private void btnRoda1_Click(object sender, EventArgs e)
+        {
+            lblRoda.Text = "Calculo da Roda 01";
+        }
+
+        private void btnRoda2_Click(object sender, EventArgs e)
+        {
+            lblRoda.Text = "Calculo da Roda 02";
+        }
+
+        private void btnRoda3_Click(object sender, EventArgs e)
+        {
+            lblRoda.Text = "Calculo da Roda 03";
+
+        }
+
+        private void btnRoda4_Click(object sender, EventArgs e)
+        {
+            lblRoda.Text = "Calculo da Roda 04";
+
+        }
     }
 }

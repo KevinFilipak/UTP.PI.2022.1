@@ -14,6 +14,7 @@ namespace UTP.PI._2022._1.Forms
     {
         uscEquipe controlEquipe = null;
         uscMola controlMola = null;
+        uscSuspensao controlSuspensao = null;
 
         public frmPrincipal()
         {
@@ -141,12 +142,12 @@ namespace UTP.PI._2022._1.Forms
                 lblNomeTela.Text = "Cálculo da Constante Angular da Suspensão";
                 pnlControl.Controls.Clear();
 
-                controlMola = new uscMola
+                controlSuspensao = new uscSuspensao
                 {
                     Dock = DockStyle.Fill
                 };
 
-                pnlControl.Controls.Add(controlMola);
+                pnlControl.Controls.Add(controlSuspensao);
             }
             catch (Exception ex)
             {

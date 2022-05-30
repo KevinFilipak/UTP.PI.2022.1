@@ -110,8 +110,8 @@ namespace UTP.PI._2022._1.Forms
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            frmEQ002 frmEQ002 = new frmEQ002();
-            frmEQ002.Show();
+            frmCC001 _frmCC001 = new frmCC001();
+            _frmCC001.Show();
         }
     }
 }
