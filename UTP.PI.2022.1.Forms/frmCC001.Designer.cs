@@ -337,9 +337,9 @@ namespace UTP.PI._2022._1.Forms
             this.lblTextoResultado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTextoResultado.Location = new System.Drawing.Point(466, 305);
             this.lblTextoResultado.Name = "lblTextoResultado";
-            this.lblTextoResultado.Size = new System.Drawing.Size(138, 30);
+            this.lblTextoResultado.Size = new System.Drawing.Size(211, 30);
             this.lblTextoResultado.TabIndex = 30;
-            this.lblTextoResultado.Text = "RESULTADO:";
+            this.lblTextoResultado.Text = "RESULTADO (N/m) :";
             this.lblTextoResultado.Visible = false;
             // 
             // lblResultado

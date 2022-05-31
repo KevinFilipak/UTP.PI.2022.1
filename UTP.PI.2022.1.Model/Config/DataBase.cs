@@ -98,8 +98,8 @@ namespace UTP.PI._2022._1.Model.Config
                                             + "    PESO_RODA       FLOAT,      "
                                             + "    DISTANCIA_EIXO FLOAT,       "
                                             + "    DISTANCIA_APOIO FLOAT,      "
-                                            + "    CONSTANTE FLOAT,             "
-                                            + "    DATA DATETIME);";
+                                            + "    CONSTANTE FLOAT,            "
+                                            + "    DATA DATETIME             );";
                 command.ExecuteNonQuery();
 
                 using (var cmd = conn.CreateCommand())

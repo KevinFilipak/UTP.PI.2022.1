@@ -32,6 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdEquipe = new System.Windows.Forms.DataGridView();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.RODA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PESO_RODA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DISTANCIA_EIXO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DISTANCIA_APOIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CONSTANTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquipe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +62,13 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.grdEquipe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdEquipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdEquipe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RODA,
+            this.PESO_RODA,
+            this.DISTANCIA_EIXO,
+            this.DISTANCIA_APOIO,
+            this.CONSTANTE,
+            this.DATA});
             this.grdEquipe.Location = new System.Drawing.Point(3, 3);
             this.grdEquipe.Name = "grdEquipe";
             this.grdEquipe.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -95,6 +108,42 @@
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
+            // RODA
+            // 
+            this.RODA.DataPropertyName = "RODA";
+            this.RODA.HeaderText = "Roda";
+            this.RODA.Name = "RODA";
+            // 
+            // PESO_RODA
+            // 
+            this.PESO_RODA.DataPropertyName = "PESO_RODA";
+            this.PESO_RODA.HeaderText = "Peso na Roda";
+            this.PESO_RODA.Name = "PESO_RODA";
+            // 
+            // DISTANCIA_EIXO
+            // 
+            this.DISTANCIA_EIXO.DataPropertyName = "DISTANCIA_EIXO";
+            this.DISTANCIA_EIXO.HeaderText = "Distância Ponta de Eixo";
+            this.DISTANCIA_EIXO.Name = "DISTANCIA_EIXO";
+            // 
+            // DISTANCIA_APOIO
+            // 
+            this.DISTANCIA_APOIO.DataPropertyName = "DISTANCIA_APOIO";
+            this.DISTANCIA_APOIO.HeaderText = "Distância do Apoio";
+            this.DISTANCIA_APOIO.Name = "DISTANCIA_APOIO";
+            // 
+            // CONSTANTE
+            // 
+            this.CONSTANTE.DataPropertyName = "CONSTANTE";
+            this.CONSTANTE.HeaderText = "Constante (N/m)";
+            this.CONSTANTE.Name = "CONSTANTE";
+            // 
+            // DATA
+            // 
+            this.DATA.DataPropertyName = "DATA";
+            this.DATA.HeaderText = "Data do Cálculo";
+            this.DATA.Name = "DATA";
+            // 
             // uscMola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -114,5 +163,11 @@
 
         private System.Windows.Forms.DataGridView grdEquipe;
         private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RODA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PESO_RODA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DISTANCIA_EIXO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DISTANCIA_APOIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CONSTANTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA;
     }
 }

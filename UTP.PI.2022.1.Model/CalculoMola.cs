@@ -11,7 +11,7 @@ namespace UTP.PI._2022._1.Model
 {
     public class CalculoMola
     {
-        [DisplayName("Equipe")]
+        //[DisplayName("Equipe")]
         public string EQUIPE { get; set; }
 
         [DisplayName("Roda")]
@@ -42,7 +42,7 @@ namespace UTP.PI._2022._1.Model
 
                 using (var command = conn.CreateCommand())
                 {
-                    command.CommandText = "SELECT RODA, EQUIPE, PESO_RODA, DISTANCIA_EIXO, DISTANCIA_APOIO, CONSTANTE, DATA FROM tb_CalcMola WHERE EQUIPE = @EQUIPE";
+                    command.CommandText = "SELECT RODA, PESO_RODA, DISTANCIA_EIXO, DISTANCIA_APOIO, CONSTANTE, DATA FROM tb_CalcMola WHERE EQUIPE = @EQUIPE";
 
                     command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE));
 
@@ -53,12 +53,11 @@ namespace UTP.PI._2022._1.Model
                             lst.Add(new CalculoMola
                             {
                                 RODA = dr.GetInt32(0),
-                                EQUIPE = dr.GetString(1),
-                                PESO_RODA = dr.GetFloat(2),
-                                DISTANCIA_EIXO = dr.GetFloat(3),
-                                DISTANCIA_APOIO = dr.GetFloat(4),
-                                CONSTANTE = dr.GetFloat(5),
-                                DATA = dr.GetDateTime(6),
+                                PESO_RODA = dr.GetFloat(1),
+                                DISTANCIA_EIXO = dr.GetFloat(2),
+                                DISTANCIA_APOIO = dr.GetFloat(3),
+                                CONSTANTE = dr.GetFloat(4),
+                                DATA = dr.GetDateTime(5),
 
                             });
                         }

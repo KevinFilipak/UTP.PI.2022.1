@@ -139,7 +139,6 @@ namespace UTP.PI._2022._1.Forms
                 txtDistanciaApoio.Text = calculo[3].DISTANCIA_APOIO.ToString();
                 lblResultado.Text = calculo[3].CONSTANTE.ToString();
 
-
             }
             else
             {
@@ -160,7 +159,7 @@ namespace UTP.PI._2022._1.Forms
             {
                 float _formula = ((float.Parse(txtPeso.Text) * float.Parse(txtDistanciaEixo.Text)) / float.Parse(txtDistanciaApoio.Text));
 
-                lblResultado.Text = _formula.ToString() + " N/m";
+                lblResultado.Text = _formula.ToString();
 
                 if (lblRoda.Text == "Calculo da Roda 01")
                 {
