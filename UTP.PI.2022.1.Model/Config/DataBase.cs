@@ -102,6 +102,16 @@ namespace UTP.PI._2022._1.Model.Config
                                             + "    DATA DATETIME             );";
                 command.ExecuteNonQuery();
 
+                command.CommandText = "CREATE TABLE tb_CalcCurso("
+                                          + "    ID INTEGER      PRIMARY KEY,"
+                                          + "    EQUIPE VARCHAR (50),        "
+                                          + "    RODA INT,                   "
+                                          + "    DISTANCIA_CHAO  FLOAT,      "
+                                          + "    DISTANCIA_TRIANGULO FLOAT,  "
+                                          + "    CONSTANTE FLOAT,            "
+                                          + "    DATA DATETIME             );";
+                command.ExecuteNonQuery();
+
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = sql.ToString();
@@ -110,6 +120,8 @@ namespace UTP.PI._2022._1.Model.Config
             }
 
         }
+
+
 
     }
 }

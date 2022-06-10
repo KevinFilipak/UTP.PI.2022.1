@@ -63,6 +63,16 @@ namespace UTP.PI._2022._1.Forms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap asd {
+            get {
+                object obj = ResourceManager.GetObject("asd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bar_chart_2x {
             get {
                 object obj = ResourceManager.GetObject("bar-chart-2x", resourceCulture);
@@ -96,6 +106,16 @@ namespace UTP.PI._2022._1.Forms.Properties {
         internal static System.Drawing.Bitmap close1 {
             get {
                 object obj = ResourceManager.GetObject("close1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap g113 {
+            get {
+                object obj = ResourceManager.GetObject("g113", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

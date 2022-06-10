@@ -11,13 +11,13 @@ using UTP.PI._2022._1.Model;
 
 namespace UTP.PI._2022._1.Forms
 {
-    public partial class frmCC001 : Form
+    public partial class frmCC002 : Form
     {
-        public List<CalculoMola> calculo = new List<CalculoMola>();
+        public List<CalculoCurso> calculo = new List<CalculoCurso>();
 
 
 
-        public frmCC001()
+        public frmCC002()
         {
             InitializeComponent();
         }
@@ -30,27 +30,26 @@ namespace UTP.PI._2022._1.Forms
 
         private void frmEQ002_Load(object sender, EventArgs e)
         {
-            //float _peso = (float)Convert.ToDouble(txtPeso.Text);
 
-            calculo.Add(new CalculoMola()
+            calculo.Add(new CalculoCurso()
             {
                 EQUIPE = Program.EquipeLogada.EQUIPE,
                 RODA = 1,
 
             }); ;
-            calculo.Add(new CalculoMola()
+            calculo.Add(new CalculoCurso()
             {
                 EQUIPE = Program.EquipeLogada.EQUIPE,
                 RODA = 2,
 
             }); ;
-            calculo.Add(new CalculoMola()
+            calculo.Add(new CalculoCurso()
             {
                 EQUIPE = Program.EquipeLogada.EQUIPE,
                 RODA = 3,
 
             }); ;
-            calculo.Add(new CalculoMola()
+            calculo.Add(new CalculoCurso()
             {
                 EQUIPE = Program.EquipeLogada.EQUIPE,
                 RODA = 4,
@@ -71,17 +70,15 @@ namespace UTP.PI._2022._1.Forms
 
             if (calculo[0].CONSTANTE > 0)
             {
-                txtPeso.Text = calculo[0].PESO_RODA.ToString();
-                txtDistanciaEixo.Text = calculo[0].DISTANCIA_EIXO.ToString();
-                txtDistanciaApoio.Text = calculo[0].DISTANCIA_APOIO.ToString();
+                txtDistanciaChao.Text = calculo[0].DISTANCIA_CHAO.ToString();
+                txtComprimentoTriangulo.Text = calculo[0].DISTANCIA_TRIANGULO.ToString();
                 lblResultado.Text = calculo[0].CONSTANTE.ToString();
 
             }
             else
             {
-                txtPeso.Clear();
-                txtDistanciaApoio.Clear();
-                txtDistanciaEixo.Clear();
+                txtDistanciaChao.Clear();
+                txtComprimentoTriangulo.Clear();
                 lblResultado.Text = "";
             }
         }
@@ -93,17 +90,15 @@ namespace UTP.PI._2022._1.Forms
 
             if (calculo[1].CONSTANTE > 0)
             {
-                txtPeso.Text = calculo[1].PESO_RODA.ToString();
-                txtDistanciaEixo.Text = calculo[1].DISTANCIA_EIXO.ToString();
-                txtDistanciaApoio.Text = calculo[1].DISTANCIA_APOIO.ToString();
+                txtDistanciaChao.Text = calculo[1].DISTANCIA_CHAO.ToString();
+                txtComprimentoTriangulo.Text = calculo[1].DISTANCIA_TRIANGULO.ToString();
                 lblResultado.Text = calculo[1].CONSTANTE.ToString();
 
             }
             else
             {
-                txtPeso.Clear();
-                txtDistanciaApoio.Clear();
-                txtDistanciaEixo.Clear();
+                txtDistanciaChao.Clear();
+                txtComprimentoTriangulo.Clear();
                 lblResultado.Text = "";
             }
         }
@@ -115,17 +110,15 @@ namespace UTP.PI._2022._1.Forms
 
             if (calculo[2].CONSTANTE > 0)
             {
-                txtPeso.Text = calculo[2].PESO_RODA.ToString();
-                txtDistanciaEixo.Text = calculo[2].DISTANCIA_EIXO.ToString();
-                txtDistanciaApoio.Text = calculo[2].DISTANCIA_APOIO.ToString();
+                txtDistanciaChao.Text = calculo[2].DISTANCIA_CHAO.ToString();
+                txtComprimentoTriangulo.Text = calculo[2].DISTANCIA_TRIANGULO.ToString();
                 lblResultado.Text = calculo[2].CONSTANTE.ToString();
 
             }
             else
             {
-                txtPeso.Clear();
-                txtDistanciaApoio.Clear();
-                txtDistanciaEixo.Clear();
+                txtDistanciaChao.Clear();
+                txtComprimentoTriangulo.Clear();
                 lblResultado.Text = "";
             }
         }
@@ -134,17 +127,15 @@ namespace UTP.PI._2022._1.Forms
         {
             if (calculo[3].CONSTANTE > 0)
             {
-                txtPeso.Text = calculo[3].PESO_RODA.ToString();
-                txtDistanciaEixo.Text = calculo[3].DISTANCIA_EIXO.ToString();
-                txtDistanciaApoio.Text = calculo[3].DISTANCIA_APOIO.ToString();
+                txtDistanciaChao.Text = calculo[3].DISTANCIA_CHAO.ToString();
+                txtComprimentoTriangulo.Text = calculo[3].DISTANCIA_TRIANGULO.ToString();
                 lblResultado.Text = calculo[3].CONSTANTE.ToString();
 
             }
             else
             {
-                txtPeso.Clear();
-                txtDistanciaApoio.Clear();
-                txtDistanciaEixo.Clear();
+                txtDistanciaChao.Clear();
+                txtComprimentoTriangulo.Clear();
                 lblResultado.Text = "";
             }
             lblRoda.Text = "Calculo da Roda 04";
@@ -155,57 +146,58 @@ namespace UTP.PI._2022._1.Forms
         private void btnCalcular_Click(object sender, EventArgs e)
         {
 
-            if (txtPeso.Text != "" || txtDistanciaEixo.Text != "" || txtDistanciaApoio.Text != "")
+            if (txtDistanciaChao.Text != "" || txtComprimentoTriangulo.Text != "")
             {
-                double _formula = ((((double.Parse(txtPeso.Text) * double.Parse(txtDistanciaEixo.Text)) / double.Parse(txtDistanciaApoio.Text))*10)* 1000);
+                double _formula = ((float.Parse(txtDistanciaChao.Text)/ 2)/ float.Parse(txtComprimentoTriangulo.Text));
+
+                _formula = Math.Atan(_formula);
+                _formula = _formula * (180 / Math.PI);
+                _formula = (_formula * 2);
+
 
                 lblResultado.Text = _formula.ToString();
 
                 if (lblRoda.Text == "Calculo da Roda 01")
                 {
-                    calculo[0] = new CalculoMola()
+                    calculo[0] = new CalculoCurso()
                     {
                         EQUIPE = Program.EquipeLogada.EQUIPE,
                         RODA = 1,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                        DISTANCIA_CHAO = float.Parse(txtDistanciaChao.Text),
+                        DISTANCIA_TRIANGULO = float.Parse(txtComprimentoTriangulo.Text),
                         CONSTANTE = _formula,
                     };
                 }
                 else if (lblRoda.Text == "Calculo da Roda 02")
                 {
-                    calculo[1] = new CalculoMola()
+                    calculo[1] = new CalculoCurso()
                     {
                         EQUIPE = Program.EquipeLogada.EQUIPE,
                         RODA = 2,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                        DISTANCIA_CHAO = float.Parse(txtDistanciaChao.Text),
+                        DISTANCIA_TRIANGULO = float.Parse(txtComprimentoTriangulo.Text),
                         CONSTANTE = _formula,
                     };
                 }
                 else if (lblRoda.Text == "Calculo da Roda 03")
                 {
-                    calculo[2] = new CalculoMola()
+                    calculo[2] = new CalculoCurso()
                     {
                         EQUIPE = Program.EquipeLogada.EQUIPE,
                         RODA = 3,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                        DISTANCIA_CHAO = float.Parse(txtDistanciaChao.Text),
+                        DISTANCIA_TRIANGULO = float.Parse(txtComprimentoTriangulo.Text),
                         CONSTANTE = _formula,
                     };
                 }
                 else if (lblRoda.Text == "Calculo da Roda 04")
                 {
-                    calculo[3] = new CalculoMola()
+                    calculo[3] = new CalculoCurso()
                     {
                         EQUIPE = Program.EquipeLogada.EQUIPE,
                         RODA = 4,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                        DISTANCIA_CHAO = float.Parse(txtDistanciaChao.Text),
+                        DISTANCIA_TRIANGULO = float.Parse(txtComprimentoTriangulo.Text),
                         CONSTANTE = _formula,
                     };
                 }
@@ -223,11 +215,9 @@ namespace UTP.PI._2022._1.Forms
             lblRoda.Visible = true;
             lblPeso.Visible = true;
             lblTextoResultado.Visible = true;
-            lblDistanciaApoio.Visible = true;
             lblDistanciaEixo.Visible = true;
-            txtPeso.Visible = true;
-            txtDistanciaApoio.Visible = true;
-            txtDistanciaEixo.Visible = true;
+            txtDistanciaChao.Visible = true;
+            txtComprimentoTriangulo.Visible = true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -238,7 +228,6 @@ namespace UTP.PI._2022._1.Forms
             calculo[1].Salvar();
             calculo[2].Salvar();
             calculo[3].Salvar();
-
 
             this.Close();
             }

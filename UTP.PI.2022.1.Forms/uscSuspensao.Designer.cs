@@ -31,6 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdEquipe = new System.Windows.Forms.DataGridView();
+            this.RODA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DISTANCIA_CHAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DISTANCIA_TRIANGULO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CONSTANTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquipe)).BeginInit();
             this.SuspendLayout();
@@ -41,8 +46,8 @@
             this.grdEquipe.AllowUserToDeleteRows = false;
             this.grdEquipe.AllowUserToResizeColumns = false;
             this.grdEquipe.AllowUserToResizeRows = false;
-            this.grdEquipe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.grdEquipe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdEquipe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdEquipe.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -56,6 +61,12 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.grdEquipe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdEquipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdEquipe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RODA,
+            this.DISTANCIA_CHAO,
+            this.DISTANCIA_TRIANGULO,
+            this.CONSTANTE,
+            this.DATA});
             this.grdEquipe.Location = new System.Drawing.Point(3, 3);
             this.grdEquipe.Name = "grdEquipe";
             this.grdEquipe.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -76,6 +87,36 @@
             this.grdEquipe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquipe_CellDoubleClick);
             this.grdEquipe.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdEquipe_KeyDown);
             // 
+            // RODA
+            // 
+            this.RODA.DataPropertyName = "RODA";
+            this.RODA.HeaderText = "Roda";
+            this.RODA.Name = "RODA";
+            // 
+            // DISTANCIA_CHAO
+            // 
+            this.DISTANCIA_CHAO.DataPropertyName = "DISTANCIA_CHAO";
+            this.DISTANCIA_CHAO.HeaderText = "Distância do chão";
+            this.DISTANCIA_CHAO.Name = "DISTANCIA_CHAO";
+            // 
+            // DISTANCIA_TRIANGULO
+            // 
+            this.DISTANCIA_TRIANGULO.DataPropertyName = "DISTANCIA_TRIANGULO";
+            this.DISTANCIA_TRIANGULO.HeaderText = "Comprimento do Triângulo da Suspensão";
+            this.DISTANCIA_TRIANGULO.Name = "DISTANCIA_TRIANGULO";
+            // 
+            // CONSTANTE
+            // 
+            this.CONSTANTE.DataPropertyName = "CONSTANTE";
+            this.CONSTANTE.HeaderText = "Constante (°)";
+            this.CONSTANTE.Name = "CONSTANTE";
+            // 
+            // DATA
+            // 
+            this.DATA.DataPropertyName = "DATA";
+            this.DATA.HeaderText = "Data do Cálculo";
+            this.DATA.Name = "DATA";
+            // 
             // btnNovo
             // 
             this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -95,14 +136,14 @@
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // uscMola
+            // uscSuspensao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.grdEquipe);
-            this.Name = "uscMola";
+            this.Name = "uscSuspensao";
             this.Size = new System.Drawing.Size(745, 415);
             this.Load += new System.EventHandler(this.uscEquipe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdEquipe)).EndInit();
@@ -114,5 +155,10 @@
 
         private System.Windows.Forms.DataGridView grdEquipe;
         private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RODA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DISTANCIA_CHAO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DISTANCIA_TRIANGULO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CONSTANTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA;
     }
 }

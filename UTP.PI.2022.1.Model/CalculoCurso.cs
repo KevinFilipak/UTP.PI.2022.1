@@ -9,32 +9,30 @@ using UTP.PI._2022._1.Model.Config;
 
 namespace UTP.PI._2022._1.Model
 {
-    public class CalculoMola
+    public class CalculoCurso
     {
-        //[DisplayName("Equipe")]
+
+        [DisplayName("Equipe")]
         public string EQUIPE { get; set; }
 
         [DisplayName("Roda")]
         public int RODA { get; set; }
 
-        [DisplayName("Peso na Roda")]
-        public double PESO_RODA { get; set; }
+        [DisplayName("Distância do chão")]
+        public float DISTANCIA_CHAO { get; set; }
 
-        [DisplayName("Distância Ponta de Eixo")]
-        public double DISTANCIA_EIXO { get; set; }
+        [DisplayName("Comprimento do Triângulo da Suspensão")]
+        public float DISTANCIA_TRIANGULO { get; set; }
 
-        [DisplayName("Distância do Apoio")]
-        public double DISTANCIA_APOIO { get; set; }
-
-        [DisplayName("Constante (N/m)")]
+        [DisplayName("Constante (°)")]
         public double CONSTANTE { get; set; }
 
         [DisplayName("Data do Cálculo")]
         public DateTime DATA { get; set; }
 
-        public static List<CalculoMola> BuscarTodasEquipe(string EQUIPE)
+        public static List<CalculoCurso> BuscarTodasEquipe(string EQUIPE)
         {
-            var lst = new List<CalculoMola>();
+            var lst = new List<CalculoCurso>();
 
             using (var conn = DataBase.CriarConexao())
             {
@@ -42,7 +40,7 @@ namespace UTP.PI._2022._1.Model
 
                 using (var command = conn.CreateCommand())
                 {
-                    command.CommandText = "SELECT RODA, PESO_RODA, DISTANCIA_EIXO, DISTANCIA_APOIO, CONSTANTE, DATA FROM tb_CalcMola WHERE EQUIPE = @EQUIPE";
+                    command.CommandText = "SELECT RODA, DISTANCIA_CHAO, DISTANCIA_CHAO, CONSTANTE, DATA FROM tb_CalcCurso WHERE EQUIPE = @EQUIPE";
 
                     command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE));
 
@@ -50,12 +48,11 @@ namespace UTP.PI._2022._1.Model
                     {
                         while (dr.Read())
                         {
-                            lst.Add(new CalculoMola
+                            lst.Add(new CalculoCurso
                             {
                                 RODA = dr.GetInt32(0),
-                                PESO_RODA = dr.GetFloat(1),
-                                DISTANCIA_EIXO = dr.GetFloat(2),
-                                DISTANCIA_APOIO = dr.GetFloat(3),
+                                DISTANCIA_CHAO = dr.GetFloat(1),
+                                DISTANCIA_TRIANGULO = dr.GetFloat(2),
                                 CONSTANTE = dr.GetFloat(4),
                                 DATA = dr.GetDateTime(5),
 
@@ -76,13 +73,12 @@ namespace UTP.PI._2022._1.Model
 
 
                 SqliteCommand command = conn.CreateCommand();
-                command.CommandText = "INSERT INTO tb_CalcMola (EQUIPE, RODA, PESO_RODA, DISTANCIA_EIXO, DISTANCIA_APOIO, CONSTANTE, DATA) VALUES (@EQUIPE,@RODA,@PESO_RODA,@DISTANCIA_EIXO,@DISTANCIA_APOIO,@CONSTANTE, @DATA)";
+                command.CommandText = "INSERT INTO tb_CalcCurso (EQUIPE, RODA, DISTANCIA_CHAO, DISTANCIA_TRIANGULO, CONSTANTE, DATA) VALUES (@EQUIPE,@RODA,@DISTANCIA_CHAO,@DISTANCIA_TRIANGULO,@CONSTANTE, @DATA)";
 
                 command.Parameters.Add(new SqliteParameter("@EQUIPE", EQUIPE));
                 command.Parameters.Add(new SqliteParameter("@RODA", RODA));
-                command.Parameters.Add(new SqliteParameter("@PESO_RODA", PESO_RODA));
-                command.Parameters.Add(new SqliteParameter("@DISTANCIA_EIXO", DISTANCIA_EIXO));
-                command.Parameters.Add(new SqliteParameter("@DISTANCIA_APOIO", DISTANCIA_APOIO));
+                command.Parameters.Add(new SqliteParameter("@DISTANCIA_CHAO", DISTANCIA_CHAO));
+                command.Parameters.Add(new SqliteParameter("@DISTANCIA_TRIANGULO", DISTANCIA_TRIANGULO));
                 command.Parameters.Add(new SqliteParameter("@CONSTANTE", CONSTANTE));
                 command.Parameters.Add(new SqliteParameter("@DATA", DateTime.Now));
 

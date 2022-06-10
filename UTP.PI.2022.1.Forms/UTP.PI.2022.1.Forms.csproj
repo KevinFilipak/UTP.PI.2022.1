@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="frmCC002.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmCC001.cs">
       <SubType>Form</SubType>
     </Compile>

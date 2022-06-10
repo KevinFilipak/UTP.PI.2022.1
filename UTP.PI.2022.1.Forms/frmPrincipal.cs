@@ -82,6 +82,14 @@ namespace UTP.PI._2022._1.Forms
                 {
                     controlEquipe.Dispose();
                 }
+                if (controlSuspensao != null)
+                {
+                    controlSuspensao.Dispose();
+                }
+                if (controlMola != null)
+                {
+                    controlMola.Dispose();
+                }
             }
             catch (Exception ex)
             {
