@@ -62,7 +62,7 @@ namespace UTP.PI._2022._1.Forms
             this.button1.Location = new System.Drawing.Point(0, 480);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(386, 55);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Cadastrar Equipe";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -119,7 +119,7 @@ namespace UTP.PI._2022._1.Forms
             this.txtCOL2.Location = new System.Drawing.Point(12, 249);
             this.txtCOL2.Name = "txtCOL2";
             this.txtCOL2.Size = new System.Drawing.Size(362, 29);
-            this.txtCOL2.TabIndex = 5;
+            this.txtCOL2.TabIndex = 4;
             // 
             // label3
             // 
@@ -137,7 +137,7 @@ namespace UTP.PI._2022._1.Forms
             this.txtCOL4.Location = new System.Drawing.Point(12, 361);
             this.txtCOL4.Name = "txtCOL4";
             this.txtCOL4.Size = new System.Drawing.Size(362, 29);
-            this.txtCOL4.TabIndex = 9;
+            this.txtCOL4.TabIndex = 6;
             // 
             // label4
             // 
@@ -155,7 +155,7 @@ namespace UTP.PI._2022._1.Forms
             this.txtCOL3.Location = new System.Drawing.Point(13, 305);
             this.txtCOL3.Name = "txtCOL3";
             this.txtCOL3.Size = new System.Drawing.Size(362, 29);
-            this.txtCOL3.TabIndex = 7;
+            this.txtCOL3.TabIndex = 5;
             // 
             // label5
             // 
@@ -174,7 +174,7 @@ namespace UTP.PI._2022._1.Forms
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(362, 29);
-            this.txtPassword.TabIndex = 11;
+            this.txtPassword.TabIndex = 7;
             // 
             // cbxAdmin
             // 
@@ -183,7 +183,7 @@ namespace UTP.PI._2022._1.Forms
             this.cbxAdmin.Location = new System.Drawing.Point(13, 453);
             this.cbxAdmin.Name = "cbxAdmin";
             this.cbxAdmin.Size = new System.Drawing.Size(126, 25);
-            this.cbxAdmin.TabIndex = 13;
+            this.cbxAdmin.TabIndex = 8;
             this.cbxAdmin.Text = "Administrador";
             this.cbxAdmin.UseVisualStyleBackColor = true;
             // 
@@ -279,7 +279,7 @@ namespace UTP.PI._2022._1.Forms
             this.txtNumero.Location = new System.Drawing.Point(14, 138);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(362, 29);
-            this.txtNumero.TabIndex = 15;
+            this.txtNumero.TabIndex = 2;
             // 
             // frmEQ002
             // 
@@ -288,7 +288,6 @@ namespace UTP.PI._2022._1.Forms
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(386, 535);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbxAdmin);
             this.Controls.Add(this.label5);
@@ -302,6 +301,7 @@ namespace UTP.PI._2022._1.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCOL1);
             this.Controls.Add(this.lblEquipe);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtEquipe);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

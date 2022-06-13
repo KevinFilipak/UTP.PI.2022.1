@@ -12,7 +12,7 @@ namespace UTP.PI._2022._1.Model
     public class CalculoCurso
     {
 
-        [DisplayName("Equipe")]
+        //[DisplayName("Equipe")]
         public string EQUIPE { get; set; }
 
         [DisplayName("Roda")]
@@ -53,8 +53,8 @@ namespace UTP.PI._2022._1.Model
                                 RODA = dr.GetInt32(0),
                                 DISTANCIA_CHAO = dr.GetFloat(1),
                                 DISTANCIA_TRIANGULO = dr.GetFloat(2),
-                                CONSTANTE = dr.GetFloat(4),
-                                DATA = dr.GetDateTime(5),
+                                CONSTANTE = dr.GetFloat(3),
+                                DATA = dr.GetDateTime(4),
 
                             });
                         }

@@ -75,7 +75,7 @@ namespace UTP.PI._2022._1.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            EditarEquipe();
         }
 
         private void button2_Click(object sender, EventArgs e)

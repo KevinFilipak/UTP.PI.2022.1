@@ -24,8 +24,8 @@ namespace UTP.PI._2022._1.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
-            
+
+
         }
 
         private void frmEQ002_Load(object sender, EventArgs e)
@@ -154,68 +154,75 @@ namespace UTP.PI._2022._1.Forms
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-
-            if (txtPeso.Text != "" || txtDistanciaEixo.Text != "" || txtDistanciaApoio.Text != "")
+            try
             {
-                double _formula = ((((double.Parse(txtPeso.Text) * double.Parse(txtDistanciaEixo.Text)) / double.Parse(txtDistanciaApoio.Text))*10)* 1000);
 
-                lblResultado.Text = _formula.ToString();
+                if (txtPeso.Text != "" || txtDistanciaEixo.Text != "" || txtDistanciaApoio.Text != "")
+                {
+                    double _formula = ((((double.Parse(txtPeso.Text) * double.Parse(txtDistanciaEixo.Text)) / double.Parse(txtDistanciaApoio.Text)) * 10) * 1000);
 
-                if (lblRoda.Text == "Calculo da Roda 01")
-                {
-                    calculo[0] = new CalculoMola()
+                    lblResultado.Text = _formula.ToString();
+
+                    if (lblRoda.Text == "Calculo da Roda 01")
                     {
-                        EQUIPE = Program.EquipeLogada.EQUIPE,
-                        RODA = 1,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
-                        CONSTANTE = _formula,
-                    };
+                        calculo[0] = new CalculoMola()
+                        {
+                            EQUIPE = Program.EquipeLogada.EQUIPE,
+                            RODA = 1,
+                            PESO_RODA = float.Parse(txtPeso.Text),
+                            DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
+                            DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                            CONSTANTE = _formula,
+                        };
+                    }
+                    else if (lblRoda.Text == "Calculo da Roda 02")
+                    {
+                        calculo[1] = new CalculoMola()
+                        {
+                            EQUIPE = Program.EquipeLogada.EQUIPE,
+                            RODA = 2,
+                            PESO_RODA = float.Parse(txtPeso.Text),
+                            DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
+                            DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                            CONSTANTE = _formula,
+                        };
+                    }
+                    else if (lblRoda.Text == "Calculo da Roda 03")
+                    {
+                        calculo[2] = new CalculoMola()
+                        {
+                            EQUIPE = Program.EquipeLogada.EQUIPE,
+                            RODA = 3,
+                            PESO_RODA = float.Parse(txtPeso.Text),
+                            DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
+                            DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                            CONSTANTE = _formula,
+                        };
+                    }
+                    else if (lblRoda.Text == "Calculo da Roda 04")
+                    {
+                        calculo[3] = new CalculoMola()
+                        {
+                            EQUIPE = Program.EquipeLogada.EQUIPE,
+                            RODA = 4,
+                            PESO_RODA = float.Parse(txtPeso.Text),
+                            DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
+                            DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
+                            CONSTANTE = _formula,
+                        };
+                    }
                 }
-                else if (lblRoda.Text == "Calculo da Roda 02")
+                else
                 {
-                    calculo[1] = new CalculoMola()
-                    {
-                        EQUIPE = Program.EquipeLogada.EQUIPE,
-                        RODA = 2,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
-                        CONSTANTE = _formula,
-                    };
-                }
-                else if (lblRoda.Text == "Calculo da Roda 03")
-                {
-                    calculo[2] = new CalculoMola()
-                    {
-                        EQUIPE = Program.EquipeLogada.EQUIPE,
-                        RODA = 3,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
-                        CONSTANTE = _formula,
-                    };
-                }
-                else if (lblRoda.Text == "Calculo da Roda 04")
-                {
-                    calculo[3] = new CalculoMola()
-                    {
-                        EQUIPE = Program.EquipeLogada.EQUIPE,
-                        RODA = 4,
-                        PESO_RODA = float.Parse(txtPeso.Text),
-                        DISTANCIA_EIXO = float.Parse(txtDistanciaEixo.Text),
-                        DISTANCIA_APOIO = float.Parse(txtDistanciaApoio.Text),
-                        CONSTANTE = _formula,
-                    };
+                    MessageBox.Show("É necessário preencher todos os campos!");
                 }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("É necessário preencher todos os campos!");
+                MessageBox.Show("Valores Inválidos!");
             }
 
-            
+
         }
         private void MostrarCampos()
         {
@@ -232,15 +239,15 @@ namespace UTP.PI._2022._1.Forms
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(calculo[0].CONSTANTE > 0 || calculo[1].CONSTANTE > 0 || calculo[2].CONSTANTE > 0 || calculo[3].CONSTANTE > 0)
-            { 
-            calculo[0].Salvar();
-            calculo[1].Salvar();
-            calculo[2].Salvar();
-            calculo[3].Salvar();
+            if (calculo[0].CONSTANTE > 0 || calculo[1].CONSTANTE > 0 || calculo[2].CONSTANTE > 0 || calculo[3].CONSTANTE > 0)
+            {
+                calculo[0].Salvar();
+                calculo[1].Salvar();
+                calculo[2].Salvar();
+                calculo[3].Salvar();
 
 
-            this.Close();
+                this.Close();
             }
             else
             {

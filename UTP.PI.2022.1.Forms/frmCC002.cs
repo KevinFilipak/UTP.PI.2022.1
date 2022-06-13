@@ -151,7 +151,7 @@ namespace UTP.PI._2022._1.Forms
                 double _formula = ((float.Parse(txtDistanciaChao.Text)/ 2)/ float.Parse(txtComprimentoTriangulo.Text));
 
                 _formula = Math.Atan(_formula);
-                _formula = _formula * (180 / Math.PI);
+                _formula = (_formula * (180 / Math.PI));
                 _formula = (_formula * 2);
 
 

@@ -55,7 +55,7 @@
             this.btnLogin.Location = new System.Drawing.Point(415, 337);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(364, 57);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click);
@@ -66,7 +66,7 @@
             this.txtLogin.Location = new System.Drawing.Point(415, 194);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(364, 39);
-            this.txtLogin.TabIndex = 4;
+            this.txtLogin.TabIndex = 1;
             // 
             // txtSenha
             // 
@@ -74,7 +74,7 @@
             this.txtSenha.Location = new System.Drawing.Point(415, 279);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(364, 39);
-            this.txtSenha.TabIndex = 5;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // panel1
