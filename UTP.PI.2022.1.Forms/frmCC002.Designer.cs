@@ -310,9 +310,9 @@ namespace UTP.PI._2022._1.Forms
             this.lblResultado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblResultado.Location = new System.Drawing.Point(468, 335);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(93, 30);
+            this.lblResultado.Size = new System.Drawing.Size(41, 30);
             this.lblResultado.TabIndex = 31;
-            this.lblResultado.Text = "XX N/M";
+            this.lblResultado.Text = "XX";
             this.lblResultado.Visible = false;
             // 
             // pictureBox1
